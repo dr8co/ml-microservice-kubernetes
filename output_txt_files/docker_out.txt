@@ -41,3 +41,11 @@ REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
 [20.35373177134412]
 172.17.0.1 - - [06/Mar/2023 16:13:41] "POST /predict HTTP/1.1" 200 -
 
+########## PREDICTION OUTPUT ###########
+[ec2-user@ip-172-31-16-73 project-ml-microservice-kubernetes]$ ./make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
