@@ -1,3 +1,5 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/dr8co/ml-microservice-kubernetes/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/dr8co/ml-microservice-kubernetes/tree/main)
+
 # Operationalize a Machine Learning Microservice API
 
 !["Boston House Price Prediction"](./media/house_price.png "House Price")
