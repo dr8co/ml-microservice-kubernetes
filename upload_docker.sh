@@ -11,7 +11,7 @@ dockerpath=dr8co/sklearn:0.1
 # Authenticate & tag
 docker logout
 docker login
-docker tag 919f2e8a45ce "${dockerpath}"
+docker tag 7109123111c5 "${dockerpath}"
 echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
