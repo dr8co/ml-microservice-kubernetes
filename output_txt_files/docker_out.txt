@@ -1,0 +1,52 @@
+[ec2-user@ip-172-31-16-73 project-ml-microservice-kubernetes]$ ./run_docker.sh 
+Sending build context to Docker daemon  749.6kB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 420ef70b0364
+Step 3/6 : COPY . /app/
+ ---> Using cache
+ ---> 043e6574e15f
+Step 4/6 : RUN python -m pip install --no-cache-dir -r requirements.txt
+ ---> Using cache
+ ---> ff06eca70e3f
+Step 5/6 : EXPOSE 80
+ ---> Using cache
+ ---> 40252d064cd9
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Using cache
+ ---> 28e43ca14b0d
+Successfully built 28e43ca14b0d
+Successfully tagged sklearn:0.1
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 371-664-420
+[2023-03-06 16:13:41,154] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2023-03-06 16:13:41,165] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-03-06 16:13:41,173] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-03-06 16:13:41,177] INFO in app: prediction: 
+[20.35373177134412]
+172.17.0.1 - - [06/Mar/2023 16:13:41] "POST /predict HTTP/1.1" 200 -
+
+
+########## PREDICTION OUTPUT ###########
+[ec2-user@ip-172-31-16-73 project-ml-microservice-kubernetes]$ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
